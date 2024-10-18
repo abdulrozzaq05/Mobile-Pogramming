@@ -12,9 +12,9 @@ void main() {
 
 class MyApp extends StatelessWidget {
   final List<Itemmodel> items = [
-    Itemmodel(name: 'Malang-Bali', price: 5000, image: 'image/bali.jpeg'),
-    Itemmodel(name: 'Malang-Jakarta', price: 2000, image: 'image/jkt.jpg'),
-    Itemmodel(name: 'Malang-Medan', price: 3000, image: 'image/medan.jpeg'),
+    Itemmodel(name: 'Malang - Bali', price: 5000, image: 'image/bali.jpeg'),
+    Itemmodel(name: 'Malang - Jakarta', price: 2000, image: 'image/jkt.jpg'),
+    Itemmodel(name: 'Malang - Medan', price: 3000, image: 'image/medan.jpeg'),
   ];
   final List<Widget> rutes = [MalangBali(), MalangJakarta(), MalangMedan()];
 
@@ -114,6 +114,26 @@ class MyApp extends StatelessWidget {
                           builder: (context) => Vacation(),
                         ),
                       );
+                    },
+                  ),
+                  new Divider(),
+                  ListTile(
+                    leading: const Icon(Icons.settings),
+                    title: const Text('Setting'),
+                    // onTap: () {
+                    //   Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //       builder: (context) => ),
+                    //   );
+                    // },
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.exit_to_app),
+                    trailing: const Icon(Icons.cancel),
+                    title: const Text('Close'),
+                    onTap: () {
+                      Navigator.of(context).pop();
                     },
                   ),
                 ],
