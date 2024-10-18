@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'sewa.dart';
 
 class Innova extends StatelessWidget {
   const Innova({super.key});
@@ -23,6 +24,16 @@ class Innova extends StatelessWidget {
             Text(
               'Kendaraan yang cocok untuk keluarga kecil berisi 6-8 orang',
               style: TextStyle(fontSize: 22),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Sewa()),
+                );
+              },
+              child: const Text('Sewa Sekarang'),
             ),
           ],
         ),
