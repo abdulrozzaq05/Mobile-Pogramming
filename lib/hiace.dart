@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'sewa.dart';
 
 class Hiace extends StatelessWidget {
   const Hiace({super.key});
 
   @override
-  Widget build(BuildContext context) {    
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Toyota Hiace'),
@@ -23,6 +24,16 @@ class Hiace extends StatelessWidget {
             Text(
               'Kendaraan yang cocok untuk keluarga besar berisi 10-14 orang',
               style: TextStyle(fontSize: 22),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Sewa()),
+                );
+              },
+              child: const Text('Sewa Sekarang'),
             ),
           ],
         ),
