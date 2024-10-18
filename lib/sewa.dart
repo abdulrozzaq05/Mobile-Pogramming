@@ -12,8 +12,8 @@ class _SewaState extends State<Sewa> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
-  String _gender = 'Laki-laki'; // Default gender
-  List<DateTime?> _dates = [null]; // List to store the selected date(s)
+  String _gender = 'Laki-laki';
+  List<DateTime?> _dates = [null];
 
   @override
   Widget build(BuildContext context) {
@@ -65,8 +65,7 @@ class _SewaState extends State<Sewa> {
                 },
               ),
               const SizedBox(height: 20),
-
-              // Widget CalendarDatePicker2
+              
               CalendarDatePicker2(
                 config: CalendarDatePicker2Config(),
                 value: _dates,
@@ -80,17 +79,16 @@ class _SewaState extends State<Sewa> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  if (_formKey.currentState!.validate() && _dates[0] != null) {
-                    // Simpan data atau lakukan aksi lain
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Penyewaan berhasil')),
-                    );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                          content: Text('Mohon lengkapi semua data')),
-                    );
-                  }
+                  // if (_formKey.currentState!.validate() && _dates[0] != null) {                    
+                  //   ScaffoldMessenger.of(context).showSnackBar(
+                  //     const SnackBar(content: Text('Penyewaan berhasil')),
+                  //   );
+                  // } else {
+                  //   ScaffoldMessenger.of(context).showSnackBar(
+                  //     const SnackBar(
+                  //         content: Text('Mohon lengkapi semua data')),
+                  //   );
+                  // }
                 },
                 child: const Text('Submit'),
               ),
