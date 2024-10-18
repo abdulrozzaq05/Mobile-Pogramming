@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uts_projek/itemmodel.dart';
+import 'car.dart';
 
 class MalangJakarta extends StatelessWidget {
   const MalangJakarta({super.key});
@@ -13,21 +14,27 @@ class MalangJakarta extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              brg.image,
-              width: double.infinity,
-              height: 300,
-              fit: BoxFit.cover
-            ),
+            Image.asset(brg.image,
+                width: double.infinity, height: 300, fit: BoxFit.cover),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 'Tujuan ${brg.name} dengan harga ${brg.price}',
                 style: const TextStyle(fontSize: 20),
               ),
-              )
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Car()),
+                );
+              },
+              child: const Text('Lihat Transportasi'),
+            ),
           ],
         ),
       ),
